@@ -59,14 +59,16 @@
 </nav>
 
         <button
-          onclick="
-            const isDark = document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-          "
-          class="border border-white px-3 py-1 rounded hover:bg-white hover:text-softpurple transition"
-        >
-          🌓
-        </button>
+  aria-label="Toggle dark mode"
+  onclick="
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  "
+  class="border border-white px-3 py-1 rounded hover:bg-white hover:text-softpurple transition"
+>
+  🌓
+</button>
+
       </header>
 
       <!-- 📦 Page content -->

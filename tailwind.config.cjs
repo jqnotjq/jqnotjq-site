@@ -12,7 +12,11 @@ module.exports = {
         blue: { DEFAULT: '#3b82f6' },
         gray: { DEFAULT: '#6b7280' },
         black: '#000000',
-      }
+        softpurple: {
+          DEFAULT: 'rgb(157, 161, 189)',       // light mode
+          dark: 'rgb(120, 125, 158)',          // dark mode
+        },
+      },
     },
   },
   plugins: [],

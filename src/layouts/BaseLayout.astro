@@ -1,0 +1,33 @@
+
+---
+---
+<html lang="en" class="bg-white text-black dark:bg-black dark:text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jqnotjq.com</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+      }
+    </script>
+  </head>
+  <body class="min-h-screen font-sans flex flex-col">
+    <header class="p-4 flex justify-between items-center shadow-md bg-white dark:bg-gray-900">
+      <nav class="flex gap-4">
+        <a href="/" class="hover:underline">Home</a>
+        <a href="/work" class="hover:underline">Work</a>
+        <a href="/music" class="hover:underline">Music</a>
+        <a href="/social" class="hover:underline">Social</a>
+      </nav>
+      <button onclick="toggleDarkMode()" class="border px-3 py-1 rounded">🌓</button>
+    </header>
+    <main class="flex-1 p-6">
+      <slot />
+    </main>
+    <footer class="p-4 text-center text-sm text-gray-500 dark:text-gray-400">
+      © 2025 Jessica Drew Quiroga
+    </footer>
+  </body>
+</html>

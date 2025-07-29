@@ -4,13 +4,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout>
   <section class="space-y-4 text-black dark:text-white">
-    <h1 class="text-3xl font-bold text-teal-600 dark:text-teal-400">Work</h1>
-    <p class="mb-4">Here’s my resume, plus links to other professional work:</p>
-    <a href="/resume.pdf" target="_blank" class="inline-block bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 mb-6">Download Resume (PDF)</a>
-    <ul class="list-disc list-inside space-y-2">
-      <li><a href="https://www.linkedin.com/in/jessicadrewquiroga/" target="_blank" class="text-blue-500 hover:underline">LinkedIn</a></li>
-      <li><a href="#" class="text-blue-500 hover:underline">Selected blog posts (coming soon)</a></li>
-    </ul>
-  </section>
+  <h1 class="text-3xl font-bold text-teal-600 dark:text-teal-400">Work</h1>
+
+  <p class="mb-4">
+    With over a decade of leadership experience both in and out of tech, my focus has long been building and enabling high-performing teams that deliver work of the highest quality. I've spent time in retail, tech support, customer success, development engineering, product, partnerships, and engineering and product leadership, always focused on the customer, the team, and driving things forward. Below is my resume, which is focused on my time at Cisco. For a full overview of my pre-tech experience, please take a look at my LinkedIn.
+  </p>
+
+  <h2 class="text-2xl font-semibold text-teal-600 dark:text-teal-400 mb-2">Links</h2>
+  <ul class="list-disc list-inside space-y-2">
+    <li>
+      <a href="https://www.linkedin.com/in/jessicadrewquiroga/" target="_blank" class="text-blue-500 hover:underline">
+        LinkedIn
+      </a>
+    </li>
+    <li>
+      <a href="https://thebananastand.duo.com/blog/what-duo-unix-administrators-need-to-know-about-pluggable-authentication-modules" target="_blank" class="text-blue-500 hover:underline">
+        What Duo Unix Administrators Need to Know About Pluggable Authentication Modules
+      </a>
+    </li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold text-teal-600 dark:text-teal-400 mt-6 mb-2">Résumé</h2>
+  <div class="w-full h-[600px] mb-4 border rounded shadow">
+    <iframe
+      src="/resume.pdf"
+      class="w-full h-full"
+      title="Resume PDF"
+    ></iframe>
+  </div>
+
+  <a href="/resume.pdf" target="_blank" class="inline-block bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">
+    Download Resume (PDF)
+  </a>
+</section>
+
 </BaseLayout>
 

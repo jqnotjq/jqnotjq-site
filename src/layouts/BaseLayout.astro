@@ -29,7 +29,7 @@
 
   </head>
 
-  <body class="min-h-screen font-sans relative overflow-hidden bg-white text-black dark:bg-black dark:text-white">
+  <body class="min-h-screen font-sans relative bg-white text-black dark:bg-black dark:text-white">
 
     <!-- 🎨 Background image layer -->
     <div
@@ -82,10 +82,11 @@
 
       <!-- 📦 Page content -->
       <main class="flex-1 p-6">
-        <div class="bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-lg shadow-md p-6 max-w-4xl mx-auto text-black dark:text-white">
+        <div class="bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-lg shadow-md p-6 max-w-4xl mx-auto">
           <slot />
         </div>
       </main>
+
 
       <!-- 📬 Footer -->
       <footer class="p-4 text-center text-sm text-gray-500 dark:text-gray-400">

@@ -1,17 +1,117 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLatestYouTubeVideos } from '../lib/youtube';
+const videos = await getLatestYouTubeVideos();
 ---
 <BaseLayout>
-  <section class="space-y-4 text-black dark:text-white">
-   <h1 class="text-3xl font-bold text-teal-600 dark:text-teal-400">My Music</h1>
 
-    <p>Here's where I play, what I play, and what I'm working on.</p>
+<!-- My Music Box -->
+<section class="space-y-4 text-black dark:text-white bg-white/80 dark:bg-black/50 p-6 rounded-lg shadow-md max-w-6xl mx-auto">
+  <h1 class="text-3xl font-bold text-teal-600 dark:text-teal-400">My Music</h1>
 
-    <!-- Sample content -->
-    <ul class="list-disc pl-6 space-y-2">
-      <li>I play jazz drums, bass, flute, and more</li>
-      <li>You’ll often find me gigging around SF</li>
-      <li>Soon: arrangements, links, and videos!</li>
-    </ul>
-  </section>
-</BaseLayout>
+  <p>Starting with piano lessons for a few years as a kid, I've since learned to play many instruments, from rhythm guitar to jazz drums to saxophone and accordion. Currently, I play in the following groups:</p>
+
+  <ul class="list-disc pl-6 space-y-2">
+    <li>
+      <a 
+        href="https://www.facebook.com/melbaskitchenjazz/" 
+        class="text-blue-500 hover:underline" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Melba's Kitchen
+      </a> – Drums
+    </li>
+    <li>
+      <a 
+        href="https://sfprideband.org" 
+        class="text-blue-500 hover:underline" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        The San Francisco Pride Band
+      </a> – Upright bass, percussion, saxophone, keyboard
+    </li>
+  </ul>
+    <p>Previous groups I've either led or played with include:</p>
+
+  <ul class="list-disc pl-6 space-y-2">
+    <li>
+      <a 
+        href="https://www.instagram.com/supersupersf/" 
+        class="text-blue-500 hover:underline" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        The Super Super
+      </a> – Drums, Saxophone
+    </li>
+    <li>
+      <a 
+        href="https://www.youtube.com/@thekeyloggers984" 
+        class="text-blue-500 hover:underline" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        The Keyloggers
+      </a> – Rhythm guitar, vocals, bass, drums
+    </li>
+        <li>
+      <a 
+        href="https://www.youtube.com/playlist?list=PLv6N2H_0P79Nztpy0i-3Tpznd7ASShVOA" 
+        class="text-blue-500 hover:underline" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Panic! At The Cisco (Duo Security's in-house band)
+      </a> – Rhythm guitar, vocals
+    </li>
+    <li>
+      10 Degrees Above Parallel
+    </li>
+    <li>
+      Subject To Change
+    </li>
+    <br>
+  </ul>
+    <p>
+    Additionally, I often sit in with other groups as needed. Please use the contact form to reach out if you'd like to chat about any opportunities!</p>
+    <br>
+    <p>My latest YouTube videos are below. Please also feel free to take a look at my <a href="https://www.instagram.com/jqnotjqplaysmusic" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">Instagram</a> for more about my musical goings-on.</p>
+</section>
+
+
+<!-- Latest Videos Box -->
+<section class="mt-8 text-black dark:text-white bg-white/80 dark:bg-black/50 p-6 rounded-lg shadow-md max-w-6xl mx-auto">
+  <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+    <h2 class="text-2xl font-bold text-teal-600 dark:text-teal-400">Latest YouTube Videos</h2>
+    <a 
+      href="https://www.youtube.com/channel/UCS9TV9GaQyPEHnd_OnnFCNQ" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="text-blue-500 hover:underline text-sm mt-1 sm:mt-0"
+    >
+      Click here to see more →
+    </a>
+
+  </div>
+  <br>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {videos.map(video => (
+      <div class="rounded shadow-md overflow-hidden bg-white dark:bg-gray-900">
+        <iframe
+          src={`https://www.youtube.com/embed/${video.id}`}
+          class="w-full aspect-video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">{video.title}</h3>
+          <p class="text-sm text-gray-500">{new Date(video.pubDate).toLocaleDateString()}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
